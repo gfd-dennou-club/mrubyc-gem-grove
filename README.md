@@ -5,9 +5,9 @@ mruby/c class libraries for grove peripherals
 
 [wiki](https://github.com/gfd-dennou-club/mrubyc-gem-grove/wiki) を参照ください
 
-## 補足
+## 補遺
 
-今まで作成してきた以下のリポジトリ・wiki 情報を統合し，かつ，[共通 I/O API ガイドライン](https://github.com/mruby/microcontroller-peripheral-interface-guide) に準拠しました．
+これまでに作成してきた以下のリポジトリ・wiki 情報を統合し，かつ，[共通 I/O API ガイドライン](https://github.com/mruby/microcontroller-peripheral-interface-guide) に準拠しました．
 + https://github.com/gfd-dennou-club/mrubyc-esp32/wiki/sample_grovekit
 + https://github.com/gfd-dennou-club/mrubyc-esp32/wiki/sample_pirMotion
 + https://github.com/gfd-dennou-club/mrubyc-esp32/wiki/Sample_kanirobo
