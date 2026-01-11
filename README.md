@@ -3,7 +3,7 @@ mruby/c class libraries for grove peripherals
 
 ## 利用方法
 
-## GPIO 
+### GPIO 
 
 GROVE コネクタには端子が 4 つあるが，回路としては SIG ピンで GPIO 信号を扱うように作られている． GROVE コネクタをジャンパケーブルへ変換するケーブルを用いて，黒ケーブル (GND) を GND 端子に，赤ケーブル (VCC) を 3.3 V 端子に， 黄色ケーブル (SIG) を適当な空いている GPIO 端子に接続すればよい． 
 
@@ -16,7 +16,7 @@ GROVE コネクタには端子が 4 つあるが，回路としては SIG ピン
 | <a href="https://www.seeedstudio.com/Grove-PIR-Motion-Sensor.html"><img width=200 src="https://media-cdn.seeedstudio.com/media/catalog/product/cache/bb49d3ec4ee05b6f018e93f896b8a25d/h/t/httpsstatics3.seeedstudio.comseeedfile2018-07bazaar881121_3.jpg"></a>  | **モーションセンサ** | [GPIO (IN)](GPIO_pirMotion) |<a href="https://github.com/mruby/microcontroller-peripheral-interface-guide">共通 I/O API ガイドライン</a> |
 | <a href="https://www.seeedstudio.com/Grove-Touch-Sensor.html"> <img width="200" alt="image" src="https://media-cdn.seeedstudio.com/media/catalog/product/cache/bb49d3ec4ee05b6f018e93f896b8a25d/h/t/httpsstatics3.seeedstudio.comseeedfile2018-07bazaar881144_3.jpg" /> </a> | **タッチセンサー** | [GPIO (IN)](GPIO_TouchSensorV1.2)|<a href="https://github.com/mruby/microcontroller-peripheral-interface-guide">共通 I/O API ガイドライン</a> |
 
-## PWM
+### PWM
 
 GROVE コネクタには端子が 4 つあるが，回路としては SIG ピンで PWM 信号を扱うように作られている．
 GROVE コネクタをジャンパケーブルへ変換するケーブルを用いて，黒ケーブル (GND) を GND 端子に，赤ケーブル (VCC) を 3.3 V 端子に， 黄色ケーブル (SIG) を適当な空いている GPIO 端子に接続すればよい．
@@ -30,7 +30,7 @@ GROVE コネクタをジャンパケーブルへ変換するケーブルを用�
 | <a href="https://www.seeedstudio.com/Grove-Servo.html"><img width=200 src="https://media-cdn.seeedstudio.com/media/catalog/product/cache/bb49d3ec4ee05b6f018e93f896b8a25d/h/t/httpsstatics3.seeedstudio.comseeedimg2016-06rjmxymiq9lqxkkxxwg6udxfm.jpg"></a>  | **サーボモータ** | [PWM](PWM_servoMotor)|<a href="https://github.com/mruby/microcontroller-peripheral-interface-guide">共通 I/O API ガイドライン</a> |
 
 
-## ADC 
+### ADC 
 
 GROVE コネクタには端子が 4 つあるが，回路としては SIG ピンで ADC 信号を扱うように作られている．
 GROVE コネクタをジャンパケーブルへ変換するケーブルを用いて，黒ケーブル (GND) を GND 端子に，赤ケーブル (VCC) を 3.3 V 端子に， 黄色ケーブル (SIG) を適当な空いている GPIO 端子に接続すればよい．
@@ -45,7 +45,7 @@ GROVE コネクタをジャンパケーブルへ変換するケーブルを用�
 | <a href="https://www.seeedstudio.com/Grove-ADC-for-Load-Cell-HX711-p-4361.html"><img width=200 src="https://media-cdn.seeedstudio.com/media/catalog/product/cache/bb49d3ec4ee05b6f018e93f896b8a25d/g/r/grove-adc-for-load-cell-hx711-preveiw.jpg"></a>  | **ロードセル(重量センサ)用ADC** | [HX711](ADC_LoadCell_HX711) |<a href="https://github.com/gfd-dennou-club/mrubyc-gem-grove/blob/main/src/hx711.rb">hx711.rb</a>|
 
 
-## I2C
+### I2C
 
 センサー系は基本的に以下のプログラム構造となるようメソッドを統一している
 ```ruby
@@ -54,6 +54,7 @@ sensor = SENSOR.new( i2c, options )
 loop do
   sensor.read              #値の読み込み
   puts sensor.temperature  #温度の出力
+  sleep 10                 #待ち
 end
 ```
 
@@ -78,7 +79,7 @@ end
 |<a href="https://www.seeedstudio.com/Grove-High-Precision-RTC.html"><img width=200 src="https://media-cdn.seeedstudio.com/media/catalog/product/cache/bb49d3ec4ee05b6f018e93f896b8a25d/h/t/httpsstatics3.seeedstudio.comseeedimg2016-111gtdoessvtk0i3pa5jbxostb.jpg"></a>| **高精度リアルタイムクロック** | [PCF85063](I2C_PCF85063)|<a href="https://github.com/gfd-dennou-club/mrubyc-gem-grove/blob/main/src/pcf85063.rb">pcf85063.rb</a>|
 |<a href="https://shop.m5stack.com/products/rfid-unit-2-ws1850s"><img width=200 src="https://shop.m5stack.com/cdn/shop/products/7_e26d64b1-70c0-4c86-a29f-650499c426a7_1200x1200.jpg?v=1635500588"></a>| **RFID** |[WS1850S](I2C_WS1850S)|<a href="https://github.com/gfd-dennou-club/mrubyc-gem-grove/blob/main/src/ws1850s.rb">ws1850s.rb</a>|
 
-## その他
+### その他
 
 | 外観(リンク) | 機器名 | 動作方法 | ライブラリ |
 | :---: | :--- | :--- | :--- |
