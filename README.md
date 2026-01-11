@@ -1,5 +1,6 @@
 # mrubyc-gem-grove
-mruby/c class libraries for grove peripherals
+
+GROVE 規格の周辺機器用の mruby/c クラスライブラリ．
 
 ## 利用方法
 
