@@ -20,14 +20,15 @@ class AQM0802A
     lcd_write(0x00, [0x01])
   end
 
-  def cursor(x, y)
-    lcd_write(0x00, [0x80 + (0x40 * y + x)])
+  def cursor(line: 1)
+    lcd_write(0x00, [0x80 + (0x40 * (line - 1))])
   end
 
   def print(s)
     a = Array.new
-    s.length.times do |n|
-      a.push(s[n].ord)
+    str = s.to_s
+    str.length.times do |n|
+      a.push(str[n].ord)
     end
     lcd_write(0x40, a)
   end
@@ -43,9 +44,10 @@ lcd = AQM0802A.new(i2c)
 
 # LCD に "Hello World" 表示
 lcd.clear          #初期化
+var = 1234
 str = "ESP"        #変数に値を代入
-lcd.cursor(0, 0)   
-lcd.print("Hello?!")
-lcd.cursor(0, 1)
+lcd.cursor(line: 1)   
+lcd.print(var)
+lcd.cursor(line: 2)
 lcd.print("from #{str}") #変数の埋め込み
 =end
