@@ -1,6 +1,6 @@
 class MY9221
-  def initialize(date_pin: 21, clk_pin: 22)
-    @d = data_pin
+  def initialize(dat_pin: 21, clk_pin: 22)
+    @d = dat_pin
     @c = clk_pin
 
     GPIO.new(@d, GPIO::OUT) 
@@ -40,7 +40,7 @@ end
 =begin
 
 # --- メイン処理 ---
-led = MY9221.new(date_pin: 21, clk_pin: 22)
+led = MY9221.new(dat_pin: 21, clk_pin: 22)
 
 led.all_on(brightness: 40) 
 
